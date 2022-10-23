@@ -1,8 +1,9 @@
 import { Header } from "./components/Header";
-import { Post } from "./Post";
+import { Post } from "./components/Post";
+import { SideBar } from "./components/SideBar";
+
 import styles from "./app.module.css";
 import "./global.css";
-import { SideBar } from "./components/SideBar";
 
 export function App() {
   return (
@@ -16,10 +17,10 @@ export function App() {
         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero natus ipsam beatae illo qui quod eum atque officia! Eligendi debitis eos ut. Accusantium expedita debitis ratione in explicabo mollitia error."
       />
 
-        <Post
+  {/*       <Post
         author="Brayan Styvison"
         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero natus ipsam beatae illo qui quod eum atque officia! Eligendi debitis eos ut. Accusantium expedita debitis ratione in explicabo mollitia error."
-      />
+      /> */}
         </main>
       </div>
     </>
