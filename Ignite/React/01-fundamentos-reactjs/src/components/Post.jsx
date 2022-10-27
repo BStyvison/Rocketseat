@@ -6,8 +6,7 @@ export const Post = () => {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
+          <img className={styles.avatar}
             src="https://github.com/BStyvison.png"
             alt="Avatar"
           />
@@ -31,7 +30,7 @@ export const Post = () => {
         </p>
 
         <p>
-          👉 <a href="">jane.design/doctorcare</a>
+          👉{' '}<a href="">jane.design/doctorcare</a>
         </p>
 
         <p>
