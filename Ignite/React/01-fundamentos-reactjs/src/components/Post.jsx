@@ -15,7 +15,7 @@ export const Post = () => {
           </div>
         </div>
 
-        <time dataTime='2022-10-23 09:57:38'>Publicado há 1h</time>
+        <time title='23 de outubro ás 09:59' dataTime='2022-10-23 09:57:38'>Publicado há 1h</time>
       </header>
       
       
