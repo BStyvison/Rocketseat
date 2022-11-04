@@ -3,20 +3,28 @@ import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export const Post = () => {
+const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR', {
+  day: "2-digit",
+  month: "long",
+  year: "2-digit",
+  hour:"2-digit",
+  minute:"2-digit"
+}).format(publisheAt)
+
+export const Post = ({ author, publisheAt }) => {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src="https://github.com/BStyvison.png" />
+          <Avatar src={author.avatarUrl} />
           <div className={styles.authorInfor}>
-            <strong>Brayan Styvison</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
         <time title="23 de outubro ás 09:59" dataTime="2022-10-23 09:57:38">
-          Publicado há 1h
+          {publishedDateFormatted}
         </time>
       </header>
 
