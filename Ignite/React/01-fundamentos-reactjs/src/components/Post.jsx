@@ -51,7 +51,7 @@ export const Post = () => {
         </footer>
       </form>
 
-      <div className={styles.comentList}>
+      <div className={styles.commentList}>
         <Comment/>
         <Comment/>
         <Comment/>
