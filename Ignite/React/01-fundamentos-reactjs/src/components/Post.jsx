@@ -1,4 +1,5 @@
 import React from "react";
+import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
@@ -7,10 +8,7 @@ export const Post = () => {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.avatar}
-            src="https://github.com/BStyvison.png"
-            alt="Avatar"
-          />
+          <Avatar src="https://github.com/BStyvison.png" />
           <div className={styles.authorInfor}>
             <strong>Brayan Styvison</strong>
             <span>Web Developer</span>
@@ -31,13 +29,12 @@ export const Post = () => {
         </p>
 
         <p>
-          👉{' '}<a href="">jane.design/doctorcare</a>
+          👉 <a href="">jane.design/doctorcare</a>
         </p>
 
         <p>
-          <a href="">#novoprojeto</a> {' '}
-          <a href="">#nlw</a>{' '}
-          <a href="">#rocketseat</a>{' '}
+          <a href="">#novoprojeto</a> <a href="">#nlw</a>{" "}
+          <a href="">#rocketseat</a>{" "}
         </p>
       </div>
 
@@ -52,9 +49,9 @@ export const Post = () => {
       </form>
 
       <div className={styles.commentList}>
-        <Comment/>
-        <Comment/>
-        <Comment/>
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
     </article>
   );
