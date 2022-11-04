@@ -6,7 +6,7 @@ export const Avatar = ({hasBorder = true, src}) => {
     <div>
       <img
           className={hasBorder ? styles.avatarWithBorder : styles.avatar}
-          src={src}
+          src={ src}
           
         />
     </div>
