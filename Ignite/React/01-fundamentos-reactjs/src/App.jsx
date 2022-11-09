@@ -21,7 +21,7 @@ const posts = [
       {type: 'link', content:'https://www.linkedin.com/in/styvison/'},
         
     ],
-    publisheAt: new Date('2022-04-11 13:28'),
+    publisheAt: new Date('2022-05-11 13:28'),
   }, 
   {
     id: 2,
@@ -38,7 +38,7 @@ const posts = [
       {type: 'link', content:'https://www.linkedin.com/in/styvison/'},
         
     ],
-    publisheAt: new Date('2022-04-09 20:28'),
+    publisheAt: new Date('2022-11-09 05:28'),
   },
 ];
 
@@ -52,6 +52,7 @@ export function App() {
           {posts.map(post => {
             return(
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publisheAt={post.publisheAt}
