@@ -2,7 +2,11 @@ import { ThumbsUp, Trash } from "phosphor-react";
 import { Avatar } from "./Avatar";
 import style from "./Comment.module.css";
 
-export const Comment = ({content}) => {
+export const Comment = ({ content, deleteComment }) => {
+  function handleDeleteComment() {
+    deleteComment(content)
+  }
+
   return (
     <div className={style.comment}>
       <Avatar hasBorder={false} src="https://github.com/BStyvison.png" />
@@ -12,11 +16,14 @@ export const Comment = ({content}) => {
           <header>
             <div className={style.authorAndTime}>
               <strong>Brayan Styvison</strong>
-              <time title="23 de outubro ás 09:59" dataTime="2022-10-23 09:57:38">
+              <time
+                title="23 de outubro ás 09:59"
+                dataTime="2022-10-23 09:57:38"
+              >
                 Cerca de 1h atrás
               </time>
             </div>
-            <button title="Deletar Comentário">
+            <button onClick={handleDeleteComment} title="Deletar Comentário">
               <Trash size={24} />
             </button>
           </header>
