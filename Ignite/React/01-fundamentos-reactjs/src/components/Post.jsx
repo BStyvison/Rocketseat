@@ -39,7 +39,7 @@ export const Post = ({ author, publisheAt, content }) => {
   }
 
   function deleteComment(commment) {
-    console.log(`Deletar comentario ${commment}`)
+    setComments()
   }
 
   return (
@@ -78,9 +78,12 @@ export const Post = ({ author, publisheAt, content }) => {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea name="comment" placeholder="Deixe um comentário"
-        value={newCommentText}
-        onChange={handleNewCommentChange} />
+        <textarea 
+          name="comment" 
+          placeholder="Deixe um comentário"
+          value={newCommentText}
+          onChange={handleNewCommentChange} 
+        />
 
         <footer>
           <button type="submit">Publicar</button>
@@ -89,7 +92,13 @@ export const Post = ({ author, publisheAt, content }) => {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} deleteComment={deleteComment}/>;
+          return (
+            <Comment 
+              key={comment} 
+              content={comment} 
+              onDeleteComment={deleteComment}
+            />
+          )
         })}
       </div>
     </article>
