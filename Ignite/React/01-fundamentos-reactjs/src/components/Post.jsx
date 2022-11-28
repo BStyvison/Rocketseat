@@ -11,7 +11,7 @@ import styles from "./Post.module.css";
 export const Post = ({ author, publisheAt, content }) => {
   const [comments, setComments] = useState(["Um post muito bacana!"]);
 
-  const [newCommentText, setNewCommentText] = useState('')
+  const [newCommentText, setNewCommentText] = useState("");
 
   const publishedDateFormatted = format(
     publisheAt,
@@ -28,22 +28,20 @@ export const Post = ({ author, publisheAt, content }) => {
     event.preventDefault();
 
     const newCommentText = event.target.comment.value;
-    
 
     setComments([...comments, newCommentText]);
-    setNewCommentText('')
+    setNewCommentText("");
   }
 
   function handleNewCommentChange(event) {
-    setNewCommentText(event.target.value)
+    setNewCommentText(event.target.value);
   }
 
   function deleteComment(commmentToDelete) {
-    const commenteWithoutDeleteOne = comments.filter(commment => {
-      return commment != commmentToDelete
-    }) 
-    
-    setComments(commenteWithoutDeleteOne)
+    const commenteWithoutDeleteOne = comments.filter((commment) => {
+      return commment != commmentToDelete;
+    });
+    setComments(commenteWithoutDeleteOne);
   }
 
   return (
@@ -82,11 +80,11 @@ export const Post = ({ author, publisheAt, content }) => {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea 
-          name="comment" 
+        <textarea
+          name="comment"
           placeholder="Deixe um comentário"
           value={newCommentText}
-          onChange={handleNewCommentChange} 
+          onChange={handleNewCommentChange}
         />
 
         <footer>
@@ -97,12 +95,12 @@ export const Post = ({ author, publisheAt, content }) => {
       <div className={styles.commentList}>
         {comments.map((comment) => {
           return (
-            <Comment 
-              key={comment} 
-              content={comment} 
+            <Comment
+              key={comment}
+              content={comment}
               onDeleteComment={deleteComment}
             />
-          )
+          );
         })}
       </div>
     </article>
