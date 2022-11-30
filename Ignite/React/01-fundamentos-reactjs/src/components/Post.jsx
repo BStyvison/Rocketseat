@@ -42,7 +42,7 @@ export const Post = ({ author, publisheAt, content }) => {
       return commment != commmentToDelete;
     });
     setComments(commenteWithoutDeleteOne);
-  }
+  };
 
   return (
     <article className={styles.post}>
