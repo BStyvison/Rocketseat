@@ -43,7 +43,6 @@ export const Post = ({ author, publisheAt, content }) => {
     });
     setComments(commenteWithoutDeleteOne);
   };
-
   return (
     <article className={styles.post}>
       <header>
