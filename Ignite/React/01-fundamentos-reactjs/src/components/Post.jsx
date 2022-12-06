@@ -37,8 +37,16 @@ export const Post = ({ author, publisheAt, content }) => {
     setNewCommentText(event.target.value);
   }
 
-  function deleteComment(commment) {
-    console.log(`Deletar comentario: ${commment}`)
+  function handleNewCommentInvalid() {
+    console.log(event)
+  }
+
+  function deleteComment(commmentToDelete) {
+    const commentsWithoutDeleteOne = comments.filter(comment => {
+      return comment != commmentToDelete
+    })
+
+    setComments(commentsWithoutDeleteOne)
   };  
   
   return (
@@ -82,6 +90,8 @@ export const Post = ({ author, publisheAt, content }) => {
           placeholder="Deixe um comentário"
           value={newCommentText}
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
         <footer>
