@@ -37,14 +37,14 @@ export const Post = ({ author, publisheAt, content }) => {
     setNewCommentText(event.target.value);
   }
 
-  function handleNewCommentInvalid() {
+  function handleNewCommentInvalid(event) {
     event.target.setCustomValidity('Esse campo é obrigatório')
     console.log(event.target.value)
   }
 
-  function deleteComment(commmentToDelete) {
+  function deleteComment(commentToDelete) {
     const commentsWithoutDeleteOne = comments.filter(comment => {
-      return comment != commmentToDelete
+      return comment != commentToDelete
     })
 
     setComments(commentsWithoutDeleteOne)
