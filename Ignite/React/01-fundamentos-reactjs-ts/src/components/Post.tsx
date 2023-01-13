@@ -14,10 +14,15 @@ interface Author {
   avatarUrl: string;
 }
 
+interface Content {
+  type: 'paragraph' | 'link';
+  content: string;
+}
+
 interface PostProps {
   author: Author;
   publisheAt: Date;
-  content: string;
+  content: Content[];
 }
 
 export const Post = ({ author, publisheAt, content }: PostProps) => {
@@ -75,7 +80,7 @@ export const Post = ({ author, publisheAt, content }: PostProps) => {
 
         <time
           title={publishedDateFormatted}
-          dataTime={publisheAt.toISOString()}
+          dateTime={publisheAt.toISOString()}
         >
           {publishedDateRelativeToNow}
         </time>

@@ -3,14 +3,20 @@ import { Avatar } from "./Avatar";
 
 import style from "./Comment.module.css";
 
-export const Comment = ({ content, onDeleteComment }) => {
+
+interface commentProps {
+  content: string;
+  onDeleteComment: (comment: string) => void;
+}
+
+export const Comment = ({ content, onDeleteComment }: commentProps) => {
   function handleDeleteComment() {
     onDeleteComment(content)
   }
 
   return (
     <div className={style.comment}>
-      <Avatar hasBorder={false} src="https://github.com/BStyvison.png" />
+      <Avatar hasBorder={false} src="https://github.com/BStyvison.png" alt=''/>
 
       <div className={style.commentBox}>
         <div className={style.commentContent}>
@@ -19,7 +25,7 @@ export const Comment = ({ content, onDeleteComment }) => {
               <strong>Brayan Styvison</strong>
               <time
                 title="23 de outubro ás 09:59"
-                dataTime="2022-10-23 09:57:38"
+                dateTime="2022-10-23 09:57:38"
               >
                 Cerca de 1h atrás
               </time>
