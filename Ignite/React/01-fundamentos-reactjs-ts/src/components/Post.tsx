@@ -44,8 +44,6 @@ export const Post = ({ author, publisheAt, content }: PostProps) => {
   function handleCreateNewComment(event: FormEvent) {
     event.preventDefault();
 
-    const newCommentText = event.target.comment.value;
-
     setComments([...comments, newCommentText]);
     setNewCommentText("");
   }
