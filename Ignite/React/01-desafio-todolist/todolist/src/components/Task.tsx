@@ -9,8 +9,8 @@ export const Task = () => {
     const [countTaskDone, setCountTaskDone] = useState(0)
 
     return (
-        <main>
-            <header>
+        <main className={styles.main}>
+            <header className={styles.header}>
                 <div className={styles.CountTaskCreated}>
                     <h3>Tarefas Criadas</h3>
                     <div>{countTaskCreated}</div>
